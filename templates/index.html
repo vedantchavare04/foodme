@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodVerse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
+</head>
+<style>
+    .home-page {
+  background: linear-gradient(300deg, 			#c2e13b,			#f8e85c, 			#ffd4f3);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+    }
+    .end-footer{
+        background: linear-gradient(300deg, 			#c2e13b,			#f8e85c, 			#ffd4f3);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+    }
+    .brand-name {
+        font-family: "Satisfy", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+    .details {
+        margin-left:50px;
+        margin-right:50px;
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+</style>
+<body>
+<section class="home-page rounded-3">
+    <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="col-md-3 mb-2 mb-md-0">
+                <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none"> 
+                    <img src="static/FoodVerse.png" width="90" height="90"/>
+                </a>
+             </div> 
+             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0"> 
+                <li>
+                    <a href="{{url_for('home')}}" class="nav-link px-2 link-dark">Home</a>
+                </li> 
+                <li>
+                    <div class="dropdown">
+                <a class="nav-link link-dark btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                features
+            </a>
+
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{url_for('hotel')}}">Find hotels</a></li>
+                <li><a class="dropdown-item" href="{{url_for('hotel')}}">Find messes</a></li>
+                <li><a class="dropdown-item" href="{{url_for('add')}}">Add hotels/messes</a></li>
+            </ul>
+</div>
+        </li> 
+         <li>
+            <a href="{{url_for('about')}}" class="nav-link px-2 link-dark">About</a>
+        </li>
+     </ul>
+     <div class="col-md-3 text-end">
+        <a href="{{url_for('login_in')}}" class="btn btn-outline-dark me-2">Login</a>
+        <a href="{{url_for('sign_up')}}" class="btn btn-dark">Sign-up</a>
+    </div>
+</header> 
+</div>
+<div class="container col-xxl-8 px-4 py-5"> 
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5"> 
+        <div class="col-10 col-sm-8 col-lg-6"> 
+            <img src="static/bg.png" class="d-block mx-lg-auto img-fluid" alt="FoodVerse Image" width="800" height="500" loading="lazy">
+        </div> 
+        <div class="col-lg-6"> 
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 brand-name">FoodVerse</h1> 
+            <p class="lead">Your got-to platform for finding best restaurants/mess/food corners and lot more(regarding food) around PCMC,Pune.</p> 
+         </div> 
+        </div> 
+    </div>
+</section>
+<section>
+<div class="row g-4 py-5 row-cols-1 row-cols-lg-3 details"> 
+    <div class="col d-flex align-items-start"> 
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded">
+             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-fork-knife" viewBox="0 0 16 16">
+            <path d="M13 .5c0-.276-.226-.506-.498-.465-1.703.257-2.94 2.012-3 8.462a.5.5 0 0 0 .498.5c.56.01 1 .13 1 1.003v5.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5zM4.25 0a.25.25 0 0 1 .25.25v5.122a.128.128 0 0 0 .256.006l.233-5.14A.25.25 0 0 1 5.24 0h.522a.25.25 0 0 1 .25.238l.233 5.14a.128.128 0 0 0 .256-.006V.25A.25.25 0 0 1 6.75 0h.29a.5.5 0 0 1 .498.458l.423 5.07a1.69 1.69 0 0 1-1.059 1.711l-.053.022a.92.92 0 0 0-.58.884L6.47 15a.971.971 0 1 1-1.942 0l.202-6.855a.92.92 0 0 0-.58-.884l-.053-.022a1.69 1.69 0 0 1-1.059-1.712L3.462.458A.5.5 0 0 1 3.96 0z"/>
+</svg>
+        </div> 
+        <div> 
+            <h3 class="fs-2 text-body-emphasis">Find hotels</h3> 
+            <p>Find best hotels in PCMC,Pune area and dine in without any hassel. </p> 
+            <a href="{{url_for('login_in')}}" class="btn btn-dark">
+            Find now
+        </a> 
+        </div> 
+        </div> 
+        <div class="col d-flex align-items-start"> 
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-fork-knife" viewBox="0 0 16 16">
+                <path d="M13 .5c0-.276-.226-.506-.498-.465-1.703.257-2.94 2.012-3 8.462a.5.5 0 0 0 .498.5c.56.01 1 .13 1 1.003v5.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5zM4.25 0a.25.25 0 0 1 .25.25v5.122a.128.128 0 0 0 .256.006l.233-5.14A.25.25 0 0 1 5.24 0h.522a.25.25 0 0 1 .25.238l.233 5.14a.128.128 0 0 0 .256-.006V.25A.25.25 0 0 1 6.75 0h.29a.5.5 0 0 1 .498.458l.423 5.07a1.69 1.69 0 0 1-1.059 1.711l-.053.022a.92.92 0 0 0-.58.884L6.47 15a.971.971 0 1 1-1.942 0l.202-6.855a.92.92 0 0 0-.58-.884l-.053-.022a1.69 1.69 0 0 1-1.059-1.712L3.462.458A.5.5 0 0 1 3.96 0z"/>
+        </svg>
+            </div> 
+            <div> 
+                <h3 class="fs-2 text-body-emphasis">Find mess</h3> 
+                <p>Built with main purpose for hostelites so to find best messes in PCMC,Pune without any hassel and mainly,without going outside to explore messes.</p> 
+                <a href="{{url_for('login_in')}}" class="btn btn-dark">
+        Find now
+        </a> 
+        </div> 
+        </div> 
+        <div class="col d-flex align-items-start"> 
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+        </svg>
+            </div> 
+            <div> 
+                <h3 class="fs-2 text-body-emphasis">Add hotels/messes</h3> 
+                <p>Add the best hotels/messes you find, rate them accordinginly and help other to live hassle free.</p> 
+                <a href="{{url_for('login_in')}}" class="btn btn-dark">
+        Add
+        </a> 
+        </div> 
+        </div> 
+    </div>
+</section>
+<section>
+    <div class="container my-5"> 
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"> 
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3"> 
+                <h1 class="display-4 fw-bold lh-1 text-body-emphasis">How to use?</h1> 
+                <p class="lead">So easy to use that even your dog can use it.Just sign up and enter your name(yes,you only have to enter your name).If already signed up just login using your name,Then choose whether you have to look up for hotels,messes or add suggestions to help others from features tab.</p> 
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"> 
+                    <a type="button" href="{{url_for('sign_up')}}" class="btn btn-dark btn-lg px-4 me-md-2 fw-bold">Sign up</a>
+                    <a type="button" href="{{url_for('sign_up')}}" class="btn btn-outline-dark btn-lg px-4">Login</a>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden">
+                <img class="rounded-lg-3" src="static/findex.png" alt="Person using mobile" width="700">
+            </div>
+        </div> 
+    </div>
+</section>
+<section class="end-footer">
+    <div class="container"> 
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"> 
+            <div class="col-md-4 d-flex align-items-center"> 
+                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap"> 
+                    <svg class="bi" width="30" height="24" aria-hidden="true">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg> 
+                </a> 
+                <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Made by Vedant chavare</span> 
+            </div> 
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex"> 
+                <li class="ms-3">
+                    <a class="text-body-secondary" href="#" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                          <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                    </svg>
+                    </a>
+                </li> 
+                <li class="ms-3">
+                    <a class="text-body-secondary" href="#" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                    </svg>
+                    </a>
+                </li> 
+            </ul> 
+        </footer> 
+    </div>
+</section>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

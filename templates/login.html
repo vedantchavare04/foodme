@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodVerse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<style>
+    .sign-in{
+        margin:100px;
+    }
+    .sign{
+        background: linear-gradient(300deg, 			#c2e13b,			#f8e85c, 			#ffd4f3);
+        background-size: 180% 180%;
+        animation: gradient-animation 18s ease infinite;
+    }
+    .sign-button{
+        margin-top:20px;
+    }
+    .password{
+        margin-top:4px;
+    }
+{% from "bootstrap5/form.html" import render_form %} {% block content %}
+</style>
+<body class="sign">
+    <section >
+    <div class="sign-in">
+    <main class="form-signin w-100 m-auto">
+        {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      {% for message in messages %}
+      <p class="flash">{{ message }}</p>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+        {{render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+    <p class="mt-5 mb-3 text-body-secondary">©2025 Made by Vedant Chavare</p>
+    </main>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
+{% endblock %}

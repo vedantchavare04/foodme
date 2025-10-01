@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodVerse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<style>
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    .header-start{
+        background: linear-gradient(300deg, 			#c2e13b,			#f8e85c, 			#ffd4f3);
+        background-size: 180% 180%;
+        animation: gradient-animation 18s ease infinite;
+    }
+</style>
+<body>
+    <section class="header-start">
+        <div class="container"> 
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"> 
+                <div class="col-md-3 mb-2 mb-md-0"> 
+                    <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none"> 
+                        <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+                            <use xlink:href="#bootstrap"></use>
+                        </svg> 
+                    </a> 
+                </div> 
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0"> 
+                    <li>
+                        <a href="{{ url_for('home') }}" class="nav-link px-2 link-dark">Home</a>
+                    </li> 
+                    <li>
+                    <div class="dropdown">
+                        <a class="nav-link link-dark btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">features</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{{ url_for('hotel') }}">Find hotels</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('mess') }}">Find messes</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('add') }}">Add hotels/messes</a></li>
+                </ul>
+                </div> 
+                </li>  
+                    <li>
+                        <a href="{{ url_for('about') }}" class="nav-link px-2 link-dark">About</a>
+                    </li> 
+                </ul>
+                 
+                </header> 
+            </div>
+    </section>
+    <section>
+    <div class="container col-xxl-8 px-4 py-5 shadow-lg"> 
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5"> 
+            <div class="col-10 col-sm-8 col-lg-6"> 
+                <img src="bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="Hotel name" width="700" height="500" loading="lazy"> </div>
+                 <div class="col-lg-6"> 
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Hotel name</h1> 
+                    <ol>
+                        <li>Ratings</li>
+                        <li>Service</li>
+                        <li>Google map</li>
+                    </ol>
+                     
+                </div> 
+            </div> 
+        </div>
+        </body>
+    </section>
+    <!-- <input type="file" id="fileProfile2" name="fileProfile2" accept="image/png,image/jpeg" capture="filesytem"> -->
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
