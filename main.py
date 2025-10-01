@@ -12,7 +12,7 @@ app=Flask(__name__)
 bootstrap = Bootstrap5(app)
 
 login_manager = LoginManager()
-app.config['SECRET_KEY'] =os.environ.get('SECRET_KEY')
+app.config['SECRET_KEY'] =os.environ.get('FLASK_KEY')
 login_manager.init_app(app)
 
 @login_manager.user_loader
