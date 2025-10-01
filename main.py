@@ -1,20 +1,18 @@
 import os
-import sqlite3
-import flask
 from flask import Flask, render_template, flash, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
-from sqlalchemy import Integer, String, Float, create_engine
-from flask_login import UserMixin, login_user, LoginManager, current_user, logout_user
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from sqlalchemy import Integer, String, Float
+from flask_login import UserMixin, login_user, LoginManager, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from forms import RegisterForm, LoginForm,HotelForm
-from flask_bootstrap import Bootstrap, Bootstrap5
+from flask_bootstrap import Bootstrap5
 
 app=Flask(__name__)
 bootstrap = Bootstrap5(app)
 
 login_manager = LoginManager()
-app.config['SECRET_KEY'] = '2hey74859574'
+app.config['SECRET_KEY'] =os.environ.get('SECRET_KEY')
 login_manager.init_app(app)
 
 @login_manager.user_loader
@@ -24,7 +22,7 @@ def load_user(user_id):
 class Base(DeclarativeBase):
     pass
 
-app.config['SQLALCHEMY_DATABASE_URI'] ="sqlite:///hotmess.db"
+app.config['SQLALCHEMY_DATABASE_URI'] =os.environ.get('DB_URI',"sqlite:///hotmess.db")
 db=SQLAlchemy(model_class=Base)
 db.init_app(app)
 
