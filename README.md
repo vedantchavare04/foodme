@@ -4,8 +4,8 @@ A minimal, well-documented starter README for building a responsive website call
 
 Tech stack-
 
-Python 3.8+ (or latest stable Python 3)
+Python 3.8+
 
-Flask (lightweight web framework)
+Flask(Framework)
 
 Bootstrap 5 (CSS framework)
